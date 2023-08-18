@@ -91,8 +91,6 @@ test("POST -> 'URL_BASE/login', should return status code 401", async()=>{
         .post(`${URL_BASE}/login`)
         .send(user)
 
-        console.log(res.body)
-
     expect(res.status).toBe(401)
         
 });
