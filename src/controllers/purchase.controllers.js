@@ -21,7 +21,7 @@ const getAll = catchError(async(req, res)=>{
     }]
 })
 
-    return res.json({result})
+    return res.json(result)
 });
 
 const create = catchError(async (req, res) => {

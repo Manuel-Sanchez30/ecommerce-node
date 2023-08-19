@@ -19,12 +19,13 @@ Cart.belongsTo(Product)
 Product.hasMany(Cart)
 
 //Purchase -> ProductId
-Purchase.belongsTo(Category)
-Category.hasMany(Purchase)
+Purchase.belongsTo(Product)
+Product.hasMany(Purchase)
 
 Purchase.belongsTo(User)
 User.hasMany(Purchase)
 
 
-
+Purchase.belongsTo(Product)
+Product.hasMany(Purchase)
 
