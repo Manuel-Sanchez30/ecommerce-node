@@ -41,7 +41,12 @@ beforeAll(async () => {
         productId: product.id
     }
 
-    await Cart.create(bodyCart)
+    await request(app)
+        .post('/api/v1/cart')
+        .send(bodyCart)
+        .set("Authorization", `Bearer ${TOKEN}`)
+
+    
 });
 
 test("POST -> 'URL_BASE', should return status code 201 and res.body.quantiy === bodyCart.quantity", async () => {
@@ -50,6 +55,6 @@ test("POST -> 'URL_BASE', should return status code 201 and res.body.quantiy ===
         .set("Authorization", `Bearer ${TOKEN}`)
 
     expect(res.status).toBe(201)
-    expect()
+    expect(res.body[0].quantity).toBe(bodyCart.quantity)
 
 });

@@ -13,4 +13,7 @@ routerProduct.route('/:id')
     .delete(verifyJwt,remove)
     .put(verifyJwt,update);
 
+routerProduct.route('/:id/images')
+    .post(setImage)    
+
 module.exports = routerProduct;

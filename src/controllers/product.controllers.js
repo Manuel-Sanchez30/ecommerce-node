@@ -43,6 +43,10 @@ const update = catchError(async(req, res) => {
     return res.json(result[1][0]);
 });
 
+const setImage = catchError(async(req,res)=>{
+    
+});
+
 module.exports = {
     getAll,
     create,
